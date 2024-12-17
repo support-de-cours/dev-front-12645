@@ -25,6 +25,16 @@ app.set('views', path.join(__dirname, "templates"));
 app.set('view engine', "html");
 app.engine('html', ejs.__express);
 
+// Definition de l'acces au repertoire "public"
+// L'acces au contenu du répertoire "public" se fait via l'url "http://site.com/"
+// -> si le css est dans "/public/styles/main.css"
+// -> l'acces sera "http://site.com/styles/main.css"
+app.use( express.static( path.join(__dirname, 'public') ) );
+
+// Acces à bootstrap
+app.use("/css", express.static( path.join( __dirname, "/node_modules/bootstrap/dist/css" )) );
+app.use("/js", express.static( path.join( __dirname, "/node_modules/bootstrap/dist/js" )) );
+
 
 // Definition du routage
 app.use( require(path.join(__dirname, './config/router')) );
