@@ -7,17 +7,17 @@ const router = express.Router();
 const path = require('path');
 
 const homepageController = require(path.join(__dirname, '../src/Controller/HomepageController'));
-
+const aboutController = require(path.join(__dirname, '../src/Controller/AboutController'));
 
 // 2. Definition des routes (path + method HTTP + controller)
 //  Syntaxe: router.<method>(path, [middleware, ] controller)
 
 
 // Homepage
-router.get('/', homepageController.index)
+router.get('/', homepageController.index);
 
 // About
-
+router.get('/about', aboutController.index);
 
 
 
