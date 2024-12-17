@@ -25,6 +25,7 @@ app.set('views', path.join(__dirname, "templates"));
 app.set('view engine', "html");
 app.engine('html', ejs.__express);
 
+
 // Definition de l'acces au repertoire "public"
 // L'acces au contenu du répertoire "public" se fait via l'url "http://site.com/"
 // -> si le css est dans "/public/styles/main.css"
