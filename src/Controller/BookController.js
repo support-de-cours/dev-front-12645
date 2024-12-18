@@ -32,11 +32,15 @@ exports.create = (request, response) => {
     //  -> la liste des "errors" est vide
     if (request.method === 'POST' && errors.isEmpty())
     {
-        console.log( title );
-    }
+        console.log( "ENREGISTRE EN BDD" );
+    }    
     
-    
-    response.render('pages/book/create');
+    response.render('pages/book/create', {
+        errors: errors.array(),
+        title: title,
+        description: description,
+        price: price,
+    });
 
 }
 
