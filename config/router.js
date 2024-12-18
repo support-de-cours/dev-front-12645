@@ -8,6 +8,7 @@ const path = require('path');
 
 const homepageController = require(path.join(__dirname, '../src/Controller/HomepageController'));
 const aboutController = require(path.join(__dirname, '../src/Controller/AboutController'));
+const bookController = require(path.join(__dirname, '../src/Controller/BookController'));
 
 // 2. Definition des routes (path + method HTTP + controller)
 //  Syntaxe: router.<method>(path, [middleware, ] controller)
@@ -19,6 +20,8 @@ router.get('/', homepageController.index);
 // About
 router.get('/about', aboutController.index);
 
+// Book
+router.get('/books', bookController.index);
 
 
 // 3. Export du router

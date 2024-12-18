@@ -6,6 +6,7 @@ const express = require('express');
 const ejs = require('ejs');
 const path = require('path');
 
+const config = require('./config/config');
 const app = express();
 const port = 3000;
 
@@ -35,6 +36,12 @@ app.use( express.static( path.join(__dirname, 'public') ) );
 // Acces à bootstrap
 app.use("/css", express.static( path.join( __dirname, "/node_modules/bootstrap/dist/css" )) );
 app.use("/js", express.static( path.join( __dirname, "/node_modules/bootstrap/dist/js" )) );
+
+
+// Export des variables JS (./config/config.js -> Vue HTML)
+// app.locals.app_title = config.app_title;
+// app.locals.app_description = config.app_description;
+app.locals.config = config;
 
 
 // Definition du routage

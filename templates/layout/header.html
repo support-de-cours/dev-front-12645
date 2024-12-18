@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titre du site</title>
+    <title><%= config.app_title %></title>
+    <meta name="description" content="<%= config.app_description %>">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -31,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                         
-                        <li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
