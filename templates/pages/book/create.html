@@ -1,0 +1,29 @@
+<%- include('../../layout/header.html') %>
+
+<h1>Create a new book</h1>
+
+<!-- Formulaire de creation d'un livre -->
+<form method="post">
+
+    <!-- Title: string required -->
+    <div class="mb-3">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" class="form-control" value="My awesome Book !">
+    </div>
+
+    <!-- Description: string optional -->
+    <div class="mb-3">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" class="form-control">This is my awesome book.... READ IT !!!</textarea>
+    </div>
+    
+    <!-- Price: number requires -->
+    <div class="mb-3">
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" class="form-control" step="0.01" min="0" value="99.99">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add the book</button>
+</form>
+
+<%- include('../../layout/footer.html') %>

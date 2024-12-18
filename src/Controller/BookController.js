@@ -5,7 +5,22 @@ exports.index = (request, response) => {
 
 // Create (créer un livre)
 exports.create = (request, response) => {
+
+    const {
+        title,
+        description,
+        price
+    } = request.body;
+
+    
+    if (request.method === 'POST')
+    {
+        console.log( title );
+    }
+    
+    
     response.render('pages/book/create');
+
 }
 
 // Read (Lire les details d'un livre)
