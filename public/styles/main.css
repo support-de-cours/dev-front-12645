@@ -7,3 +7,9 @@ body {
 .main-content {
     flex-grow: 1;
 }
+
+.required::after {
+    content: "*";
+    color: red;
+    margin-left: 4px;
+}
