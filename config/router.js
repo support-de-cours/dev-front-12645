@@ -9,6 +9,7 @@ const path = require('path');
 const homepageController = require(path.join(__dirname, '../src/Controller/HomepageController'));
 const aboutController = require(path.join(__dirname, '../src/Controller/AboutController'));
 const bookController = require(path.join(__dirname, '../src/Controller/BookController'));
+const bookValidator = require(path.join( __dirname, '../src/Validator/BookValidator'));
 
 // 2. Definition des routes (path + method HTTP + controller)
 //  Syntaxe: router.<method>(path, [middleware, ] controller)
@@ -46,7 +47,7 @@ router.get('/books', bookController.index); // Affiche les livres
 // GET  http://site.com/book  - Afiiche le formulaire
 // POST http://site.com/book  - Traitement du formulaire
 router.get('/book', bookController.create); // Affiche le formulaire (pas d'enregistrement du livre)
-router.post('/book', bookController.create); // Enregistre les données du formulaire
+router.post('/book', bookValidator.create, bookController.create); // Enregistre les données du formulaire
 
 // http://site.com/book/42
 router.get('/book/:id', bookController.read);
