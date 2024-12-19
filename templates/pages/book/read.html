@@ -4,4 +4,20 @@
 
 <!-- Affiche les données d'un livre -->
 
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <td><%= book.title %></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td><%= book.description %></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td><%= book.price %></td>
+    </tr>
+</table>
+
+
 <%- include('../../layout/footer.html') %>

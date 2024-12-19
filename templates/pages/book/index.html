@@ -10,4 +10,23 @@
 
 <!-- Boucle sur la liste des livres -->
 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let i = 0; i < books.length; i++) { %>
+        <tr>
+            <td><a href="/book/<%= books[i]._id %>"><%= books[i].title %></a></td>
+            <td><%= books[i].description %></td>
+            <td><%= books[i].price %>&euro;</td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
+
 <%- include('../../layout/footer.html') %>

@@ -13,6 +13,6 @@ exports.create = [
     // Validation du Price
     check('price')
         .not().isEmpty().withMessage('Price is required')
-        .not().isFloat({ max: 100 }).withMessage('Price must be less than or equal to 100')
+        .isFloat({ min: 0, max: 100 }).withMessage('Price must be less than or equal to 100')
 
 ];

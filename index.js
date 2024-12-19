@@ -7,8 +7,15 @@ const ejs = require('ejs');
 const path = require('path');
 
 const config = require('./config/config');
+const portUtil = require('./src/Utils/Port');
+const database = require('./src/Utils/DbConnect');
+
 const app = express();
-const port = 3000;
+const port = 3000; // portUtil();
+
+
+// Connexion à la base de données
+database.connect();
 
 
 // Configration de l'application 
